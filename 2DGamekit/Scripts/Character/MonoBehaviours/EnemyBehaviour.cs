@@ -152,7 +152,7 @@ namespace Gamekit2D
             if (m_Dead)
                 return;
 
-            m_MoveVector.y = Mathf.Max(m_MoveVector.y - gravity * Time.deltaTime, - gravity);
+            m_MoveVector.y = Mathf.Max(m_MoveVector.y - gravity * Time.deltaTime, - gravity);  //控制重力
 
             m_CharacterController2D.Move(m_MoveVector * Time.deltaTime);
 

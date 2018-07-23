@@ -13,12 +13,14 @@ namespace Gamekit2D
             float dist = m_MonoBehaviour.speed;
             if (m_MonoBehaviour.CheckForObstacle(dist))
             {
-                //this will inverse the move vector, and UpdateFacing will then flip the sprite & forward vector as moveVector will be in the other direction
-                m_MonoBehaviour.SetHorizontalSpeed(-dist);
+                Debug.Log(dist);
+                //this will inverse the move vector, and UpdateFacing will then flip（翻转） the sprite & forward vector as moveVector will be in the other direction
+                m_MonoBehaviour.SetHorizontalSpeed(-dist);    //退后一步的凶手找到了：
                 m_MonoBehaviour.UpdateFacing();
             }
             else
             {
+                Debug.Log("NOBS");
                 m_MonoBehaviour.SetHorizontalSpeed(dist);
             }
 

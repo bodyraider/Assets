@@ -9,7 +9,7 @@ namespace Gamekit2D
         public override void OnSLStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             base.OnSLStateEnter(animator, stateInfo, layerIndex);
-
+            Debug.Log("run");
             m_MonoBehaviour.OrientToTarget();
         }
 
@@ -26,7 +26,10 @@ namespace Gamekit2D
                 m_MonoBehaviour.ForgetTarget();
             }
             else
+            {
                 m_MonoBehaviour.SetHorizontalSpeed(amount);
+                Debug.Log("run2");
+            }
         }
 
         public override void OnSLStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
