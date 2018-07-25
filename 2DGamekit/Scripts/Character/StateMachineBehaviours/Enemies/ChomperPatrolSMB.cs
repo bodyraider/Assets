@@ -13,14 +13,14 @@ namespace Gamekit2D
             float dist = m_MonoBehaviour.speed;
             if (m_MonoBehaviour.CheckForObstacle(dist))
             {
-                Debug.Log(dist);
+                Debug.Log("have obs");
                 //this will inverse the move vector, and UpdateFacing will then flip（翻转） the sprite & forward vector as moveVector will be in the other direction
                 m_MonoBehaviour.SetHorizontalSpeed(-dist);    //退后一步的凶手找到了：
                 m_MonoBehaviour.UpdateFacing();
             }
             else
             {
-                Debug.Log("NOBS");
+                Debug.Log("no obs");
                 m_MonoBehaviour.SetHorizontalSpeed(dist);
             }
 
