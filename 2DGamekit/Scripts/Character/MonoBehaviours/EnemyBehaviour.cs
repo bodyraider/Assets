@@ -342,7 +342,10 @@ namespace Gamekit2D
             meleeDamager.gameObject.SetActive(true);
 
             if (attackDash)
+            {
                 m_MoveVector = new Vector2(m_SpriteForward.x * attackForce.x, attackForce.y);
+               
+            }
         }
 
         public void EndAttack()
