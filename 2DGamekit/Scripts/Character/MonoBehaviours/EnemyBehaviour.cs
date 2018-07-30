@@ -176,6 +176,11 @@ namespace Gamekit2D
         {
             m_MoveVector.x = horizontalSpeed * m_SpriteForward.x;
         }
+        //自己加的
+        public void SetVerticalSpeed()
+        {
+            m_MoveVector.y = 5;
+        }
 
         public bool CheckForObstacle(float forwardDistance)
         {

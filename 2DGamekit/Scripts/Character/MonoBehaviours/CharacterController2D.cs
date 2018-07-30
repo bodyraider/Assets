@@ -52,7 +52,7 @@ namespace Gamekit2D
             m_CurrentPosition = m_PreviousPosition + m_NextMovement;
             Velocity = (m_CurrentPosition - m_PreviousPosition) / Time.deltaTime;
 
-            m_Rigidbody2D.MovePosition(m_CurrentPosition);  //控制角色位移
+            m_Rigidbody2D.MovePosition(m_CurrentPosition);  //官方API，最终控制角色位移
             m_NextMovement = Vector2.zero;
 
             CheckCapsuleEndCollisions();
