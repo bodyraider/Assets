@@ -1677,7 +1677,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4714846280123948, guid: 9a2f32836e0e10248b425c273622a735, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.1
+      value: -3.268497
       objectReference: {fileID: 0}
     - target: {fileID: 4714846280123948, guid: 9a2f32836e0e10248b425c273622a735, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1749,7 +1749,7 @@ Prefab:
     - target: {fileID: 114719609329687142, guid: 9a2f32836e0e10248b425c273622a735,
         type: 2}
       propertyPath: attackForce.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114412267516478162, guid: 9a2f32836e0e10248b425c273622a735,
         type: 2}
@@ -1796,6 +1796,11 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 3c306970ce5b78343a23ac2c272db7ca, type: 2}
+    - target: {fileID: 50412786611651718, guid: 9a2f32836e0e10248b425c273622a735,
+        type: 2}
+      propertyPath: m_GravityScale
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9a2f32836e0e10248b425c273622a735, type: 2}
   m_IsPrefabParent: 0
@@ -4162,18 +4167,18 @@ CompositeCollider2D:
         Y: 70500623
       - X: 99226408
         Y: 70066720
-    - - X: -90077371
-        Y: 70500623
-      - X: -90077373
-        Y: 70500622
-      - X: -90583592
-        Y: 70066720
     - - X: -90077373
         Y: 70500622
       - X: -90077372
         Y: 70500623
       - X: -91306248
         Y: 69988592
+    - - X: -90077371
+        Y: 70500623
+      - X: -90077373
+        Y: 70500622
+      - X: -90583592
+        Y: 70066720
     - - X: 31903594
         Y: -39920940
       - X: 31864532
@@ -4470,12 +4475,12 @@ CompositeCollider2D:
       - {x: 9.99, y: 7.057036}
       - {x: 9.973263, y: 7.0500627}
       - {x: 9.922641, y: 7.006672}
-    - - {x: -9.007737, y: 7.0500627}
-      - {x: -9.007738, y: 7.0500627}
-      - {x: -9.058359, y: 7.006672}
     - - {x: -9.007738, y: 7.0500627}
       - {x: -9.007738, y: 7.0500627}
       - {x: -9.130625, y: 6.9988594}
+    - - {x: -9.007737, y: 7.0500627}
+      - {x: -9.007738, y: 7.0500627}
+      - {x: -9.058359, y: 7.006672}
     - - {x: 3.1903594, y: -3.992094}
       - {x: 3.1864533, y: -3.9881876}
       - {x: 3.1805937, y: -3.990141}

@@ -152,8 +152,7 @@ namespace Gamekit2D
             if (m_Dead)
                 return;
 
-            m_MoveVector.y = Mathf.Max(m_MoveVector.y - gravity * Time.deltaTime, - gravity);  //控制重力
-
+            //m_MoveVector.y = Mathf.Max(m_MoveVector.y - gravity * Time.deltaTime, - gravity);  //控制重力
             m_CharacterController2D.Move(m_MoveVector * Time.deltaTime);
 
             m_CharacterController2D.CheckCapsuleEndCollisions();
@@ -177,9 +176,9 @@ namespace Gamekit2D
             m_MoveVector.x = horizontalSpeed * m_SpriteForward.x;
         }
         //自己加的
-        public void SetVerticalSpeed()
+        public void SetVerticalSpeed(float verticalSpeed)
         {
-            m_MoveVector.y = 5;
+            m_MoveVector.y = verticalSpeed;
         }
 
         public bool CheckForObstacle(float forwardDistance)

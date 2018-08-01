@@ -16,10 +16,13 @@ namespace Gamekit2D
                 //this will inverse the move vector, and UpdateFacing will then flip（翻转） the sprite & forward vector as moveVector will be in the other direction
                 m_MonoBehaviour.SetHorizontalSpeed(-dist);
                 m_MonoBehaviour.UpdateFacing();
+                //Debug.Log("1");
             }
             else
             {
                 m_MonoBehaviour.SetHorizontalSpeed(dist);
+                //Debug.Log("2");
+
             }
 
             m_MonoBehaviour.ScanForPlayer();
