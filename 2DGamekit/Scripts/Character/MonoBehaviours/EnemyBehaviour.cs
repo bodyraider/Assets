@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -98,6 +99,9 @@ namespace Gamekit2D
         protected readonly int m_HashHitPara = Animator.StringToHash("Hit");
         protected readonly int m_HashDeathPara = Animator.StringToHash("Death");
         protected readonly int m_HashGroundedPara = Animator.StringToHash("Grounded");
+        //自己加的
+        protected readonly int m_HashFlyPara = Animator.StringToHash("Fly");
+
 
         private void Awake()
         {
@@ -332,6 +336,16 @@ namespace Gamekit2D
                 m_Animator.SetTrigger(m_HashMeleeAttackPara);
                 meleeAttackAudio.PlayRandomSound();
             }
+        }
+        //自己加的
+        public void AttackOrFly()
+        {
+            System.Random rd = new System.Random();
+            int mode = rd.Next(0, 9);
+            if (mode >= 3)
+                m_Animator.SetTrigger(m_HashFlyPara);
+            else
+                m_Animator.SetTrigger(m_HashMeleeAttackPara);
         }
 
         //This is called when the damager get enabled (so the enemy can damage the player). Likely be called by the animation throught animation event (see the attack animation of the Chomper)
