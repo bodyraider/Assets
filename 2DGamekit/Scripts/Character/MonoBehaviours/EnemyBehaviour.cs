@@ -342,7 +342,7 @@ namespace Gamekit2D
         {
             System.Random rd = new System.Random();
             int mode = rd.Next(0, 9);
-            if (mode >= 3)
+            if (mode >= 1)
                 m_Animator.SetTrigger(m_HashFlyPara);
             else
                 m_Animator.SetTrigger(m_HashMeleeAttackPara);
@@ -400,7 +400,7 @@ namespace Gamekit2D
 
             force *= shootForce;
 
-            Vector2 shootPosition = shootingOrigin.transform.localPosition;
+            Vector2 shootPosition = shootingOrigin.transform.position;
 
             //if we are flipped compared to normal, we need to localy flip the shootposition too
             if ((spriteFaceLeft && m_SpriteForward.x > 0) || (!spriteFaceLeft && m_SpriteForward.x > 0))
@@ -410,9 +410,9 @@ namespace Gamekit2D
 
             shootingAudio.PlayRandomSound();
 
-            obj.rigidbody2D.velocity = (GetProjectilVelocity(m_TargetShootPosition, shootingOrigin.transform.position));
+            //obj.rigidbody2D.velocity = (GetProjectilVelocity(m_TargetShootPosition, shootingOrigin.transform.position));
+            obj.rigidbody2D.velocity = m_SpriteForward.x > 0 ? Vector2.right * 15 : Vector2.left * 15;
         }
-
         //This will give the velocity vector needed to give to the bullet rigidbody so it reach the given target from the origin.
         private Vector3 GetProjectilVelocity(Vector3 target, Vector3 origin)
         {
