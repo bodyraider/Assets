@@ -653,6 +653,23 @@ namespace Gamekit2D
             }
         }
 
+        //自己加的，往上方打
+        public void CheckAndFireGunToUp()
+        {
+            if (PlayerInput.Instance.RangedAttack.Held && m_Animator.GetBool(m_HashHoldingGunPara) && PlayerInput.Instance.Vertical.Value > 0 && PlayerInput.Instance.Horizontal.Value == 0)
+            {
+                if (m_ShootingCoroutine == null)
+                    m_ShootingCoroutine = StartCoroutine(Shoot());
+            }
+
+            if ((PlayerInput.Instance.RangedAttack.Up || !m_Animator.GetBool(m_HashHoldingGunPara)) && m_ShootingCoroutine != null)
+            {
+                StopCoroutine(m_ShootingCoroutine);
+                m_ShootingCoroutine = null;
+            }
+        }
+
+
         public void ForceNotHoldingGun()
         {
             m_Animator.SetBool(m_HashHoldingGunPara, false);
