@@ -195,7 +195,7 @@ namespace Gamekit2D
                 else
                 {
                     Unpause();
-                }
+                }               
             }
         }
 
